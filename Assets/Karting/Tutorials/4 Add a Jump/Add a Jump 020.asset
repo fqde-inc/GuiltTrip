@@ -154,6 +154,7 @@ MonoBehaviour:
           m_MaskSizeModifier: 0
           m_UnmaskedControls:
           - m_SelectorMode: 0
+            m_SelectorMatchType: 0
             m_GUIContent:
               m_Text: JumpRamp
               m_Image: {fileID: 0}
