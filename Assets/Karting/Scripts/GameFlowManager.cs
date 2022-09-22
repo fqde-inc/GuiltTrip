@@ -80,12 +80,11 @@ public class GameFlowManager : MonoBehaviour
         //run race countdown animation
         ShowRaceCountdownAnimation();
         StartCoroutine(ShowObjectivesRoutine());
-
         StartCoroutine(CountdownThenStartRaceRoutine());
     }
 
     IEnumerator CountdownThenStartRaceRoutine() {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(0.1f);
         StartRace();
     }
 

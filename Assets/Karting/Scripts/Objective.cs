@@ -135,7 +135,7 @@ public abstract class Objective : MonoBehaviour
 
             if (!lapObject.lapOverNextPass)
             {
-                TimeDisplay.OnUpdateLap();
+                SpeedDisplay.OnUpdateLap();
                 lapObject.lapOverNextPass = true;
                 return;
             }
@@ -144,7 +144,7 @@ public abstract class Objective : MonoBehaviour
 
             ReachCheckpoint(0);
             ResetPickups();
-            TimeDisplay.OnUpdateLap();
+            SpeedDisplay.OnUpdateLap();
 
         }
         else
@@ -152,7 +152,7 @@ public abstract class Objective : MonoBehaviour
             ReachCheckpoint(NumberOfPickupsRemaining - 1);
             Pickups.Remove(pickupCollected);
             if (gameMode == GameMode.Laps)
-                KartGame.Track.TimeDisplay.OnUpdateLap();
+                KartGame.Track.SpeedDisplay.OnUpdateLap();
         }
     }
 

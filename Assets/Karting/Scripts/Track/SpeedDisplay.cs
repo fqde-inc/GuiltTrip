@@ -7,16 +7,14 @@ namespace KartGame.Track
     /// <summary>
     /// A class to display information about a particular racer's timings.  WARNING: This class uses strings and creates a small amount of garbage each frame.
     /// </summary>
-    public class TimeDisplay : MonoBehaviour
+    public class SpeedDisplay : MonoBehaviour
     {
 
         [Tooltip("Display the time for the current lap.")]
-        public TimeDisplayItem currentLapText;
-        [Tooltip("Display the time for the best lap.")]
-        public TimeDisplayItem bestLapText;
+        public SpeedDisplayItem currentLapText;
         
         [Tooltip("Pool object for the time display UI item.")]
-        public PoolObjectDef timeDisplayItem;
+        public PoolObjectDef SpeedDisplayItem;
 
         [Tooltip("Finished lap info will be displayed under this parent.")]
         public UITable finishedLapsParent; 
@@ -28,15 +26,13 @@ namespace KartGame.Track
 
         private float currentLapStartTime;
 
-        private List<TimeDisplayItem> lapTimesText = new List<TimeDisplayItem>();
+        private List<SpeedDisplayItem> lapTimesText = new List<SpeedDisplayItem>();
 
         private bool lapsOver;
         void Awake()
         {
             currentLapText.SetText("");
-            bestLapText.SetText("");
             currentLapText.SetTitle("Current:");
-            bestLapText.SetTitle("Best Lap:");
             currentLapStartTime = 0;
             lapsOver = false;
         }
@@ -46,7 +42,7 @@ namespace KartGame.Track
 
             for (int i = 0; i < laps; i++)
             {
-                TimeDisplayItem newItem = timeDisplayItem.getObject(false, finishedLapsParent.transform).GetComponent<TimeDisplayItem>();
+                SpeedDisplayItem newItem = SpeedDisplayItem.getObject(false, finishedLapsParent.transform).GetComponent<SpeedDisplayItem>();
                 finishedLapsParent.UpdateTable(newItem.gameObject);
                 
                 lapTimesText.Add(newItem);
@@ -60,12 +56,12 @@ namespace KartGame.Track
             OnSetLaps += SetLaps;
         }
 
-        TimeDisplayItem GetItem(int i)
+        SpeedDisplayItem GetItem(int i)
         {
 
             if (i >= lapTimesText.Count)
             {
-                TimeDisplayItem newItem = timeDisplayItem.getObject(false, finishedLapsParent.transform).GetComponent<TimeDisplayItem>();
+                SpeedDisplayItem newItem = SpeedDisplayItem.getObject(false, finishedLapsParent.transform).GetComponent<SpeedDisplayItem>();
                 finishedLapsParent.UpdateTable(newItem.gameObject);
                 lapTimesText.Add(newItem);
                 return newItem;
@@ -106,8 +102,6 @@ namespace KartGame.Track
             
             AddFinishedLapTime(finishedLapTimes.Count - 1);
 
-            bestLapText.SetText(DisplaySessionBestLapTime());
-
 
             if (finishedLapTimes.Count == lapTimesText.Count)
             {
@@ -125,7 +119,7 @@ namespace KartGame.Track
 
         void AddFinishedLapTime(int lap)
         {
-            TimeDisplayItem newItem = GetItem(lap);
+            SpeedDisplayItem newItem = GetItem(lap);
 
             newItem.SetText(getTimeString(finishedLapTimes[lap]));
             newItem.SetTitle($"Lap {lap+1}:");
