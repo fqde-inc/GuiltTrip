@@ -2,9 +2,9 @@
 using UnityEngine;
 
 /// <summary>
-/// A class that handle the title and body of a TimeDisplayItem.
+/// A class that handle the title and body of a SpeedDisplayItem.
 /// </summary>
-public class TimeDisplayItem : MonoBehaviour
+public class SpeedDisplayItem : MonoBehaviour
 {
     [Tooltip("A reference to the TextMeshProUGUI to display the time.")]
     [SerializeField]
@@ -15,8 +15,8 @@ public class TimeDisplayItem : MonoBehaviour
     protected TextMeshProUGUI title;
     
     /// <summary>
-    /// Set the text body of the TimeDisplayItem. 
-    /// If the input "text" is null or empty the method will disable the TimeDisplayItem gameobject. Otherwise it enables it.
+    /// Set the text body of the SpeedDisplayItem. 
+    /// If the input "text" is null or empty the method will disable the SpeedDisplayItem gameobject. Otherwise it enables it.
     /// </summary>
     /// <param name="text">string to display in the body</param>
     public void SetText(string text)
@@ -32,7 +32,7 @@ public class TimeDisplayItem : MonoBehaviour
     }
 
     /// <summary>
-    /// Set the text title of the TimeDisplayItem.
+    /// Set the text title of the SpeedDisplayItem.
     /// </summary>
     /// <param name="text">string to display in the title</param>
     public void SetTitle(string text)

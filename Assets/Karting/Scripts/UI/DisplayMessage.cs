@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 
 public class DisplayMessage : MonoBehaviour
@@ -11,7 +11,6 @@ public class DisplayMessage : MonoBehaviour
     [Tooltip("Delay before displaying the message")]
     public float delayBeforeShowing;
 
-    
     float m_InitTime = float.NegativeInfinity;
 
     public bool autoDisplayOnAwake;
@@ -27,7 +26,6 @@ public class DisplayMessage : MonoBehaviour
             m_DisplayMessageManager = FindObjectOfType<DisplayMessageManager>();
         
         DebugUtility.HandleErrorIfNullFindObject<DisplayMessageManager, DisplayMessage>(m_DisplayMessageManager, this);
-
 
         m_WasDisplayed = false;
     }
@@ -57,5 +55,4 @@ public class DisplayMessage : MonoBehaviour
 
     }
 
-   
 }
