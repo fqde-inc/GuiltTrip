@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 
 public class DisplayDialogue : MonoBehaviour
@@ -20,7 +20,7 @@ public class DisplayDialogue : MonoBehaviour
     public bool autoDisplayOnAwake;
     bool m_WasDisplayed;
     DisplayDialogueManager m_DisplayMessageManager;
-
+    
     private NotificationToast notification;
 
     void OnEnable()
@@ -41,9 +41,7 @@ public class DisplayDialogue : MonoBehaviour
         if (!autoDisplayOnAwake) return;
         if (m_WasDisplayed) return;
         
-
         if (Time.time - m_InitTime > delayBeforeShowing) Display();
-        
     }
     
     public void Display()
