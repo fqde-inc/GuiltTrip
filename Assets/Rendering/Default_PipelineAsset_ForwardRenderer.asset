@@ -21,7 +21,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   outlineSettings:
-    outlineColor: {r: 0.19967243, g: 0, b: 0.23584908, a: 0.5568628}
+    outlineColor: {r: 0.14272445, g: 0, b: 0.2264151, a: 0.56078434}
     outlineScale: 5
     depthThreshold: 1
     robertsCrossMultiplier: 100
@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Active: 1
   settings:
     renderPassEvent: 550
-    screenHeight: 244
+    screenHeight: 200
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

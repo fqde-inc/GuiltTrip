@@ -4,9 +4,7 @@ using UnityEngine.Rendering.Universal;
 
 public class PixelizeFeature : ScriptableRendererFeature
 {
-    
-    private Material material;
-    
+
     [System.Serializable]
     public class CustomPassSettings
     {
