@@ -24,8 +24,9 @@ public static class StringExtensions
 }
 public class Dialogue : MonoBehaviour
 {
+    public TextMeshProUGUI authorTextComponent;
     public TextMeshProUGUI textComponent;
-    public string[] lines;
+    public DialogueLines lines;
     public float textSpeed;
     public float waitTime;
 
@@ -54,7 +55,6 @@ public class Dialogue : MonoBehaviour
            tagDictionary.Add(tag._char, tag.color); 
         }
 
-        StartDialogue();
     }
 
     void Awake() {
@@ -71,13 +71,16 @@ public class Dialogue : MonoBehaviour
         //var verts = textInfo.mesh[charInfo.materialReferenceIndex].vertices;
     }
 
-    void StartDialogue(){
+    public void StartDialogue(DialogueLines _lines){
         index = 0;
+        lines = _lines;
         StartCoroutine(TypeLine());
     }
     IEnumerator TypeLine()
     {
-        foreach (char c in lines[index].ToCharArray()){
+        DialogueLines.Line line = lines.lines[index];
+        authorTextComponent.text = line.author;
+        foreach (char c in line.text.ToCharArray()){
 
             if (tagDictionary.ContainsKey(c)) {
                 currentColor = currentColor == textColor ? tagDictionary[c] : textColor;
@@ -95,7 +98,7 @@ public class Dialogue : MonoBehaviour
 
     void NextLine()
     {
-        if(index < lines.Length - 1){
+        if(index < lines.lines.Count - 1){  
             index++;
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());

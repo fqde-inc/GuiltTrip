@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17068061, g: 0.06923961, b: 0.15184829, a: 1}
+  m_IndirectSpecularColor: {r: 0.17122526, g: 0.0695448, b: 0.15268382, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -33004,7 +33004,7 @@ PrefabInstance:
     - target: {fileID: 6691645748356329552, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7777778
+      value: 0.7754237
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
@@ -57767,6 +57767,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volume: {fileID: 1176067597}
+  system: {fileID: 1554804913}
+  lines:
+    waitingTime: 0
+    lines:
+    - author: Jack
+      text: Miami...
+      waitingTime: 1
+    - author: Jack
+      text: This cursed city.
+      waitingTime: 2
+    - author: Jack
+      text: Never got a hold of this damn this fucking place.
+      waitingTime: 2
+    - author: Jack
+      text: To think |you| wanted to raise kids here. In this bloody mess...
+      waitingTime: 2
+    index: 0
+  mustGlitch: 0
+  NPC: {fileID: 7677505664885567163}
 --- !u!1001 &1553624883
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57939,20 +57958,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa5d12ecda08285429646312defb7637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  authorTextComponent: {fileID: 1939348294}
   textComponent: {fileID: 1514943398}
   lines:
-  - Here we are.
-  - The last sunset.
-  - The permanent escape.
-  - I won't be missed. I know what they'll say.
-  - '"If only we knew", "I should have called more often"'
-  - Bullshit.
-  - They think they're in contol.
-  - Like they fucking own me.
-  - We're all in this mess now.
-  - We're all in this mess now.
-  - We're all in this mess now.
-  - We're all in this mess now.
+    waitingTime: 0
+    lines: []
+    index: 0
   textSpeed: 0.05
   waitTime: 4
   audioSource: {fileID: 1687723347}
@@ -65376,6 +65387,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volume: {fileID: 1176067597}
+  system: {fileID: 1554804913}
+  lines:
+    waitingTime: 0
+    lines:
+    - author: Jack
+      text: Miami...
+      waitingTime: 1
+    - author: Jack
+      text: This cursed city.
+      waitingTime: 2
+    - author: Jack
+      text: Never got a hold of this damn this fucking place.
+      waitingTime: 2
+    - author: Jack
+      text: To think |you| wanted to raise kids here. In this bloody mess...
+      waitingTime: 2
+    index: 0
+  mustGlitch: 0
+  NPC: {fileID: 0}
 --- !u!65 &1746404047
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -84305,7 +84335,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &7798798854865930531
 GameObject:
   m_ObjectHideFlags: 0
