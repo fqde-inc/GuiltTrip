@@ -104,7 +104,7 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-        IEnumerator ColorRainbow()
+    IEnumerator ColorRainbow()
     {
         while (true) {
             for (int i = 0; i < textComponent.textInfo.characterCount; ++i) {

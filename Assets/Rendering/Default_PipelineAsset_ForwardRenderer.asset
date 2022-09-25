@@ -36,6 +36,20 @@ MonoBehaviour:
     perObjectData: 0
     enableDynamicBatching: 0
     enableInstancing: 0
+--- !u!114 &-6174070532067894613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d97da06d1b4e6e64e837fe2d4f512162, type: 3}
+  m_Name: DigitalGlitchFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  shader: {fileID: 4800000, guid: f543b3af2e0e5044caa979485a566d18, type: 3}
 --- !u!114 &-1603043562749640264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,7 +65,7 @@ MonoBehaviour:
   m_Active: 1
   settings:
     renderPassEvent: 550
-    screenHeight: 200
+    screenHeight: 288
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,7 +84,9 @@ MonoBehaviour:
   m_RendererFeatures:
   - {fileID: -1603043562749640264}
   - {fileID: -8274449910671079913}
-  m_RendererFeatureMap: b8c1d47a5fd8c0e91706b06aa53f2b8d
+  - {fileID: -6174070532067894613}
+  - {fileID: 7166152235740767708}
+  m_RendererFeatureMap: b8c1d47a5fd8c0e91706b06aa53f2b8dabdae20d904b51aadc25b3917d497363
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -110,3 +126,17 @@ MonoBehaviour:
   m_ClusteredRendering: 0
   m_TileSize: 32
   m_IntermediateTextureMode: 0
+--- !u!114 &7166152235740767708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65186ef1f25f74b9e6da90e3a9c15e, type: 3}
+  m_Name: AnalogGlitchFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  shader: {fileID: 4800000, guid: a8806b096c701424f865bdd5e4b76928, type: 3}
