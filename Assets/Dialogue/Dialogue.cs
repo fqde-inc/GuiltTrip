@@ -47,17 +47,15 @@ public class Dialogue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //textColor = textColor == null ? textComponent.color : textColor;
-        textComponent.text = string.Empty;
-
         tagDictionary = new Dictionary<char, Color>();
         foreach(var tag in tags) {
            tagDictionary.Add(tag._char, tag.color); 
         }
-
+        gameObject.SetActive(false);
     }
 
     void Awake() {
+        //textColor = textColor == null ? textComponent.color : textColor;
 
     }
     // Update is called once per frame
@@ -72,6 +70,9 @@ public class Dialogue : MonoBehaviour
     }
 
     public void StartDialogue(DialogueLines _lines){
+        StopAllCoroutines();
+        textComponent.text = string.Empty;
+        authorTextComponent.text = string.Empty;
         index = 0;
         lines = _lines;
         StartCoroutine(TypeLine());

@@ -80,7 +80,7 @@ public class Checkpoint : MonoBehaviour{
     IEnumerator WriteLines()
     {
         yield return new WaitForSeconds(0.31f);
-
+        system.gameObject.SetActive(true);
         system.StartDialogue(lines);
     }
 }

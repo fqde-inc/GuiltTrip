@@ -39,14 +39,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   lift:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: {x: 1, y: 1, z: 1, w: -0.119631894}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: -0.19938649}
+    m_Value: {x: 1, y: 1, z: 1, w: -0.32303628}
   gain:
     m_OverrideState: 0
-    m_Value: {x: 1, y: 1, z: 1, w: 0.12576704}
+    m_Value: {x: 1, y: 1, z: 1, w: 0.33759406}
 --- !u!114 &-3394822121735433461
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -80,8 +80,8 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.19991231
-          value: 0.35963315
+          time: 0.17395675
+          value: 0.31063843
           inSlope: 1
           outSlope: 1
           tangentMode: 0
@@ -89,7 +89,7 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 1
+          time: 0.5158371
           value: 1
           inSlope: 1
           outSlope: 1
@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97c23e3b12dc18c42a140437e53d3951, type: 3}
   m_Name: Tonemapping
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   mode:
     m_OverrideState: 1
     m_Value: 1
@@ -297,31 +297,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 0
   redOutRedIn:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 100
   redOutGreenIn:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   redOutBlueIn:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   greenOutRedIn:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   greenOutGreenIn:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 100
   greenOutBlueIn:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   blueOutRedIn:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   blueOutGreenIn:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   blueOutBlueIn:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 100
 --- !u!114 &1542208406044247013
 MonoBehaviour:
@@ -358,11 +358,11 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 1
   dirtTexture:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: {fileID: 0}
     dimension: 1
   dirtIntensity:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
 --- !u!114 &3124872943989936293
 MonoBehaviour:
@@ -413,8 +413,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   postExposure:
-    m_OverrideState: 1
-    m_Value: 0
+    m_OverrideState: 0
+    m_Value: 2.32
   contrast:
     m_OverrideState: 1
     m_Value: 63.9
