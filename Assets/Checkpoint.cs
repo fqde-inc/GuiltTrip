@@ -46,7 +46,7 @@ public class Checkpoint : MonoBehaviour{
             dgl.active = true;
         }
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.3f);
         
         if (volume.profile.TryGet<AnalogGlitchVolume>(out agl)){
             agl.active = false;
@@ -55,7 +55,7 @@ public class Checkpoint : MonoBehaviour{
             dgl.active = false;
         }
 
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.05f);
 
         if (volume.profile.TryGet<AnalogGlitchVolume>(out agl)){
             agl.active = true;
@@ -64,7 +64,7 @@ public class Checkpoint : MonoBehaviour{
             dgl.active = true;
         }
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         
         if (volume.profile.TryGet<AnalogGlitchVolume>(out agl)){
             agl.active = false;

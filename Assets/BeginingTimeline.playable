@@ -100,7 +100,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 6.6833334
+        time: 5.633333
         value: 0.0000076293945
         inSlope: 0
         outSlope: 0
@@ -109,8 +109,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 7.35
-        value: 1.0000076
+        time: 5.9666667
+        value: 1.0437394
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -118,8 +118,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 8.7
-        value: 1.0000076
+        time: 7.7166667
+        value: 1.0437394
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -127,8 +127,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 9.15
-        value: 0.0000076293945
+        time: 8.066667
+        value: 0.0000076256692
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -142,15 +142,7 @@ AnimationClip:
     path: 
     classID: 114
     script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_PPtrCurves:
-  - curve:
-    - time: 6.55
-      value: {fileID: 3745771609245866691, guid: 4ef1a0cb607c438498032bfa099a216b,
-        type: 2}
-    attribute: m_sharedMaterial
-    path: 
-    classID: 114
-    script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_PPtrCurves: []
   m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
@@ -165,21 +157,13 @@ AnimationClip:
       typeID: 114
       customType: 0
       isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 0
-      attribute: 122495210
-      script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-      typeID: 114
-      customType: 0
-      isPPtrCurve: 1
-    pptrCurveMapping:
-    - {fileID: 3745771609245866691, guid: 4ef1a0cb607c438498032bfa099a216b, type: 2}
+    pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 9.15
+    m_StopTime: 8.066667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -199,7 +183,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 6.6833334
+        time: 5.633333
         value: 0.0000076293945
         inSlope: 0
         outSlope: 0
@@ -208,8 +192,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 7.35
-        value: 1.0000076
+        time: 5.9666667
+        value: 1.0437394
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -217,8 +201,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 8.7
-        value: 1.0000076
+        time: 7.7166667
+        value: 1.0437394
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -226,8 +210,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 9.15
-        value: 0.0000076293945
+        time: 8.066667
+        value: 0.0000076256692
         inSlope: 0
         outSlope: 0
         tangentMode: 136

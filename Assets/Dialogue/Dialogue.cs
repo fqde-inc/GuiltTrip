@@ -1,26 +1,21 @@
+using System.Net.Mime;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using TMPro;
+using URPGlitch.Runtime.AnalogGlitch;
+using URPGlitch.Runtime.DigitalGlitch;
+using UnityEngine.UI;
+using System.Text.RegularExpressions;
 
 public static class StringExtensions
 {
     public static string AddColor(this char c, Color col) => $"<color={ColorHexFromUnityColor(col)}>{c}</color>";
+    public static string AddColor(this string c, Color col) => $"<color={ColorHexFromUnityColor(col)}>{c}</color>";
     public static string ColorHexFromUnityColor(this Color unityColor) => $"#{ColorUtility.ToHtmlStringRGB(unityColor)}";
     
-    public static string GetStrBetweenTags(this string value, 
-                                       string startTag, 
-                                       string endTag)
-    {
-        if (value.Contains(startTag) && value.Contains(endTag))
-        {
-            int index = value.IndexOf(startTag) + startTag.Length;
-            return value.Substring(index, value.IndexOf(endTag) - index);
-        }
-        else
-            return null;
-    }
 }
 public class Dialogue : MonoBehaviour
 {
@@ -28,7 +23,8 @@ public class Dialogue : MonoBehaviour
     public TextMeshProUGUI textComponent;
     public DialogueLines lines;
     public float textSpeed;
-    public float waitTime;
+
+    public Volume volume;
 
     private int index;
     public AudioSource audioSource;
@@ -77,11 +73,59 @@ public class Dialogue : MonoBehaviour
         lines = _lines;
         StartCoroutine(TypeLine());
     }
+
     IEnumerator TypeLine()
     {
         DialogueLines.Line line = lines.lines[index];
-        authorTextComponent.text = line.author;
-        foreach (char c in line.text.ToCharArray()){
+
+        if(line.author == "GLITCH"){
+            StartCoroutine(Glitch());
+            yield return new WaitForSeconds(line.waitingTime);
+            NextLine();
+            yield break;
+        } else if(lines.lines[index].author == "WAIT") {
+            Image img = this.GetComponent<Image>();
+            img.enabled = false;
+            yield return new WaitForSeconds(line.waitingTime);
+            img.enabled = true;
+            NextLine();
+            yield break;
+        }
+
+        Dictionary<string, Color> table = new Dictionary<string, Color>(){
+            { "Wolf" , Color.grey },
+            { "Jack" , Color.yellow },
+            { "???" , Color.white },
+            { "Caith" , Color.magenta }
+        };
+        
+        authorTextComponent.text = $"{line.author.AddColor(table[line.author])}";
+
+        var textarray = line.text.ToCharArray();
+        bool skipNext = false;
+        for(int i = 0; i < textarray.Length; i++){
+            if(skipNext){
+                skipNext = false;
+                continue;
+            }
+
+            char c = textarray[i];
+
+            if (c == '$'){
+                var next = textarray[i + 1];
+
+                if( next == ' ' || next == '\0') 
+                    continue;
+
+                else if( next == 'g' ) 
+                    StartCoroutine(Glitch());
+
+                else if( Char.IsDigit(next) )
+                    yield return new WaitForSeconds( (float) Char.GetNumericValue(next) / 5 );
+
+                skipNext = true;
+                continue;
+            }
 
             if (tagDictionary.ContainsKey(c)) {
                 currentColor = currentColor == textColor ? tagDictionary[c] : textColor;
@@ -93,8 +137,13 @@ public class Dialogue : MonoBehaviour
             yield return new WaitForSeconds(textSpeed);
         }
         
-        yield return new WaitForSeconds(waitTime);
+        yield return new WaitForSeconds(line.waitingTime);
         NextLine();
+    }
+
+    IEnumerator Wait(float time)
+    {
+        yield return new WaitForSeconds(time);
     }
 
     void NextLine()
@@ -102,6 +151,7 @@ public class Dialogue : MonoBehaviour
         if(index < lines.lines.Count - 1){  
             index++;
             textComponent.text = string.Empty;
+            authorTextComponent.text = string.Empty;
             StartCoroutine(TypeLine());
         } else {
             gameObject.SetActive(false);
@@ -190,4 +240,45 @@ public class Dialogue : MonoBehaviour
         return "#" + ((int)(r * 255)).ToString("X2") + ((int)(g * 255)).ToString("X2") + ((int)(b * 255)).ToString("X2");
     }
  
+
+    IEnumerator Glitch()
+    {
+        AnalogGlitchVolume agl;
+        DigitalGlitchVolume dgl;
+
+        if (volume.profile.TryGet<AnalogGlitchVolume>(out agl)){
+            agl.active = true;
+        }
+        if (volume.profile.TryGet<DigitalGlitchVolume>(out dgl)){
+            dgl.active = true;
+        }
+
+        yield return new WaitForSeconds(0.2f);
+        
+        if (volume.profile.TryGet<AnalogGlitchVolume>(out agl)){
+            agl.active = false;
+        }
+        if (volume.profile.TryGet<DigitalGlitchVolume>(out dgl)){
+            dgl.active = false;
+        }
+
+        yield return new WaitForSeconds(0.05f);
+
+        if (volume.profile.TryGet<AnalogGlitchVolume>(out agl)){
+            agl.active = true;
+        }
+        if (volume.profile.TryGet<DigitalGlitchVolume>(out dgl)){
+            dgl.active = true;
+        }
+
+        yield return new WaitForSeconds(0.2f);
+        
+        if (volume.profile.TryGet<AnalogGlitchVolume>(out agl)){
+            agl.active = false;
+        }
+        if (volume.profile.TryGet<DigitalGlitchVolume>(out dgl)){
+            dgl.active = false;
+        }
+
+    }
 }
